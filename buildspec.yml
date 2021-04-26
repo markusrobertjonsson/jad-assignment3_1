@@ -40,7 +40,7 @@ phases:
     commands:
       - echo Build started on `date`
       - python -m unittest -v tests/test_*.py
-      working-directory: .
+#      working-directory: .
       
   post_build:
     commands:
