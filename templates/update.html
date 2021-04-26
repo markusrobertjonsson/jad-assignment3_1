@@ -1,24 +1,22 @@
 {% extends 'base.html' %}
 
 {% block head %}
-	<title>XY Data</title>
+	<title>Data Owners</title>
 {% endblock %}
 
 {% block body %}
-    <h1>Update XYData</h1>
-    <form action="/update/{{xydata.id}}" method="POST">
+    <h1>Update Data Owner</h1>
+    <form action="/update/{{owner.id}}" method="POST">
 		<table>
             <tr>
-                <th>Description</th>
-                <th>Owner</th>
-                <th>x</th>
-                <th>y</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
             </tr>
             <tr>
-                <td><input type="text" name="description" value="{{xydata.description}}"></td>
-                <td><input type="text" name="owner" value="{{xydata.owner}}"></td>
-                <td><input type="text" name="x" value="{{xydata.x}}"></td>
-                <td><input type="text" name="y" value="{{xydata.y}}"></td>
+                <td><input type="text" name="name" value="{{owner.name}}"></td>
+                <td><input type="number" name="age" value="{{owner.age}}"></td>
+                <td><input type="text" name="email" value="{{owner.email}}"></td>
             </tr>
         </table>
         <input type="submit" value="Update">
