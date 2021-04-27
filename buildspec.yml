@@ -30,4 +30,4 @@ phases:
 artifacts:
   files:
     - app.zip
-  discard-paths: yes
+  discard-paths: no
