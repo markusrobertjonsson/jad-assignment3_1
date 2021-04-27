@@ -3,7 +3,7 @@ This file (test_models.py) contains the unit tests for the model DataOwner.
 """
 import unittest
 
-from app import DataOwner
+from application import DataOwner
 
 
 class TestBasic(unittest.TestCase):
@@ -23,8 +23,7 @@ class TestBasic(unittest.TestCase):
         WHEN a new DataOwner is created
         THEN check the name, age, and email fields are defined correctly
         """
-        pass
-        # owner = DataOwner(name='My Name', age=40, email='my_name@mail.com')
-        # assert owner.name == 'My Name'
-        # assert owner.age == 40
-        # assert owner.email == 'my_name@mail.com'
+        owner = DataOwner(name='My Name', age=40, email='my_name@mail.com')
+        assert owner.name == 'My Name'
+        assert owner.age == 40
+        assert owner.email == 'my_name@mail.com'
