@@ -1,4 +1,4 @@
-# from os import environ
+from os import environ
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -7,18 +7,18 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# # Get environment variables on server
-# USERNAME = environ.get('RDS_USERNAME')
-# PASSWORD = environ.get('RDS_PASSWORD')
-# HOSTNAME = environ.get('RDS_HOSTNAME')
-# PORT = environ.get('RDS_PORT')
-# DBNAME = environ.get('RDS_DB_NAME')
+# Get environment variables on server
+USERNAME = environ.get('RDS_USERNAME')
+PASSWORD = environ.get('RDS_PASSWORD')
+HOSTNAME = environ.get('RDS_HOSTNAME')
+PORT = environ.get('RDS_PORT')
+DBNAME = environ.get('RDS_DB_NAME')
 
 # Syntax: dialect+driver://username:password@host:port/database
-# application.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOSTNAME}:{PORT}/{DBNAME}'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOSTNAME}:{PORT}/{DBNAME}'
 
 # In tests. Creates a file dataowner_sqlite.db in same dir as this file.
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dataowner_sqlite.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dataowner_sqlite.db'
 
 # To avoid warning. We do not use the Flask-SQLAlchemy event system, anyway.
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
